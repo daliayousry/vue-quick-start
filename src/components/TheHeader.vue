@@ -1,7 +1,7 @@
 <template>
 <div>
-    <p> This is my header</p>
-    <p>{{hello=='hi'?'nice':'okay'}}</p>
+    <p  :style="{textDecoration:decoration}"> This is my heade></p>
+    <p :class="{decoration:isUnderline}"> This is my header</p>
 </div>
 </template>
 
@@ -10,9 +10,15 @@ export default {
     name: 'TheHeader',
     data(){
         return{
-            hello:'hi'
+         decoration:'underline',
+         isUnderline:true
         }
     }
     
 }
 </script>
+<style scoped>
+.decoration{
+    text-decoration: underline;
+}
+</style>
