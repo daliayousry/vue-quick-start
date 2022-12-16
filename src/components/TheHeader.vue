@@ -3,7 +3,39 @@
     <div class="header-container text-center pt-3 pb-2">
         <h2 class="vue-todo-list my-4">✨ Vue Todo List</h2>
     </div>
-    <b-card class="todo-list-card" title="Card title" sub-title="Card subtitle">
+    <b-card class="todo-list-card">
+        <b-list-group>
+            <b-list-group-item>Cras justo odio
+                <div class="todo-list-action">
+                    <i class="fa-regular fa-heart todo-action-icon"></i>
+                    <i class="fa-regular fa-trash-can todo-action-icon"></i>
+                </div>
+            </b-list-group-item>
+            <b-list-group-item>Dapibus ac facilisis in
+                <div class="todo-list-action">
+                    <i class="fa-regular fa-heart todo-action-icon"></i>
+                    <i class="fa-regular fa-trash-can todo-action-icon"></i>
+                </div>
+            </b-list-group-item>
+            <b-list-group-item>Morbi leo risus
+                <div class="todo-list-action">
+                    <i class="fa-regular fa-heart todo-action-icon"></i>
+                    <i class="fa-regular fa-trash-can todo-action-icon"></i>
+                </div>
+            </b-list-group-item>
+            <b-list-group-item>Porta ac consectetur ac
+                <div class="todo-list-action">
+                    <i class="fa-regular fa-heart todo-action-icon"></i>
+                    <i class="fa-regular fa-trash-can todo-action-icon"></i>
+                </div>
+            </b-list-group-item>
+            <b-list-group-item>Vestibulum at eros
+                <div class="todo-list-action">
+                    <i class="fa-regular fa-heart todo-action-icon"></i>
+                    <i class="fa-regular fa-trash-can todo-action-icon"></i>
+                </div>
+            </b-list-group-item>
+        </b-list-group>
     </b-card>
 
 </div>
@@ -11,9 +43,9 @@
 
 <script>
 import Vue from 'vue'
-import {
-    BCard
-} from 'bootstrap-vue'
+import {BCard} from 'bootstrap-vue'
+import {BListGroup} from 'bootstrap-vue'
+Vue.component('b-list-group', BListGroup)
 Vue.component('b-card', BCard)
 export default {
     name: 'TheHeader',
@@ -49,5 +81,18 @@ export default {
     right: 0;
     margin: 0 auto;
     margin-top: -68px;
+}
+
+.list-group {
+    text-align: left;
+}
+
+.todo-list-action {
+    display: inline-block;
+    float: right;
+}
+.todo-action-icon{
+        margin-right: 10px;
+    font-size: 20px;
 }
 </style>
