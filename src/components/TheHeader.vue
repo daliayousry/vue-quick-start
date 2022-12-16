@@ -5,31 +5,31 @@
     </div>
     <b-card class="todo-list-card">
         <b-list-group>
-            <b-list-group-item>Cras justo odio
+            <b-list-group-item> Laundary
                 <div class="todo-list-action">
                     <i class="fa-regular fa-heart todo-action-icon"></i>
                     <i class="fa-regular fa-trash-can todo-action-icon"></i>
                 </div>
             </b-list-group-item>
-            <b-list-group-item>Dapibus ac facilisis in
+            <b-list-group-item>Read new Book
                 <div class="todo-list-action">
                     <i class="fa-regular fa-heart todo-action-icon"></i>
                     <i class="fa-regular fa-trash-can todo-action-icon"></i>
                 </div>
             </b-list-group-item>
-            <b-list-group-item>Morbi leo risus
+            <b-list-group-item>Clean the house
                 <div class="todo-list-action">
                     <i class="fa-regular fa-heart todo-action-icon"></i>
                     <i class="fa-regular fa-trash-can todo-action-icon"></i>
                 </div>
             </b-list-group-item>
-            <b-list-group-item>Porta ac consectetur ac
+            <b-list-group-item>Complete the previous Task
                 <div class="todo-list-action">
                     <i class="fa-regular fa-heart todo-action-icon"></i>
                     <i class="fa-regular fa-trash-can todo-action-icon"></i>
                 </div>
             </b-list-group-item>
-            <b-list-group-item>Vestibulum at eros
+            <b-list-group-item>Update my CV
                 <div class="todo-list-action">
                     <i class="fa-regular fa-heart todo-action-icon"></i>
                     <i class="fa-regular fa-trash-can todo-action-icon"></i>
