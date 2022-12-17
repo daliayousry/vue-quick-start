@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-   <the-header></the-header>
+   <vue-todo-list></vue-todo-list>
   </div>
 </template>
 
 <script>
-import TheHeader from './components/TheHeader.vue'
+import VueTodoList from "./components/VueTodo.vue"
 
 export default {
   name: 'App',
   components: {
-    TheHeader
+    VueTodoList
   }
 }
 </script>
