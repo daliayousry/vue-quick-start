@@ -2,7 +2,9 @@
     <div>
         <the-header></the-header>
         <b-card class="todo-list-card">
-        <todo-list :todos="todos" @setFavTask="setFavTask"></todo-list>
+        <todo-list :todos="todos" @setFavTask="setFavTask">
+            <p class="todo-list-quote" slot="quote">🤗 You gonna rock!</p>
+        </todo-list>
     </b-card>
     </div>
 </template>
@@ -54,5 +56,9 @@ export default {
     right: 0;
     margin: 0 auto;
     margin-top: -68px;
+}
+.todo-list-quote{
+    margin-top: 27px;
+    font-weight: bold;
 }
 </style>

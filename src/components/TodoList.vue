@@ -1,4 +1,5 @@
 <template>
+<div>
 <b-list-group>
     <b-list-group-item class="list-group" v-for="todo in todos" :key="todo.id">
         {{todo.task}}
@@ -8,6 +9,8 @@
         </div>
     </b-list-group-item>
 </b-list-group>
+<slot name="quote"></slot>
+</div>
 </template>
 
 <script>
