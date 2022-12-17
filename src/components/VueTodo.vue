@@ -2,6 +2,7 @@
     <div>
         <the-header></the-header>
         <b-card class="todo-list-card">
+            <h3 class="welcome-msg">Hello {{ name | prepend('Dr.')}}</h3><br>
         <todo-list :todos="todos" @setFavTask="setFavTask">
             <p class="todo-list-quote" slot="quote">🤗 You gonna rock!</p>
         </todo-list>
@@ -38,6 +39,12 @@ export default {
                     isFav: false
                 },
             ],
+            name:'Dalia'
+        }
+    },
+    filters:{
+        prepend(name,prefix){
+        return `${prefix} ${name}`;
         }
     },
     methods: {
@@ -60,5 +67,8 @@ export default {
 .todo-list-quote{
     margin-top: 27px;
     font-weight: bold;
+}
+.welcome-msg{
+    text-align: left;
 }
 </style>
