@@ -1,27 +1,28 @@
 <template>
-    <div>
-        <the-header></the-header>
-        <b-card class="todo-list-card">
-            <h3 class="welcome-msg">Hello {{ name | prepend('Dr.')}}</h3><br>
+<div>
+    <the-header></the-header>
+    <b-card class="todo-list-card">
+        <h3 class="welcome-msg">Hello {{ name | prepend('Dr.')}}</h3><br>
         <todo-list :todos="todos" @setFavTask="setFavTask">
-            <p class="todo-list-quote" slot="quote">🤗 You gonna rock!</p>
+            <p v-if="quotes" class="todo-list-quote" slot="quote">🤗 {{quotes[Math.floor(Math.random() * 1000) + 1].text}}</p>
         </todo-list>
     </b-card>
-    </div>
+</div>
 </template>
+
 <script>
 import Vue from 'vue'
-import TheHeader from"./TheHeader.vue";
+import TheHeader from "./TheHeader.vue";
 import TodoList from "./TodoList.vue"
 import {BCard} from 'bootstrap-vue'
 Vue.component('b-card', BCard)
 export default {
-     name:'VueTodoList',
-        components: {
+    name: 'VueTodoList',
+    components: {
         TodoList,
         TheHeader
     },
-      data() {
+    data() {
         return {
             todos: [{
                     task: 'Laundry',
@@ -39,13 +40,21 @@ export default {
                     isFav: false
                 },
             ],
-            name:'Dalia'
+            name: 'Dalia',
+            quotes:null
         }
     },
-    filters:{
-        prepend(name,prefix){
-        return `${prefix} ${name}`;
+    filters: {
+        prepend(name, prefix) {
+            return `${prefix} ${name}`;
         }
+    },
+ async created() {
+       this.quotes = await fetch("https://type.fit/api/quotes")
+            .then(function (response) {
+                return response.json();
+            })
+            console.log("Quotes", this.quotes)
     },
     methods: {
         setFavTask(id) {
@@ -55,6 +64,7 @@ export default {
     }
 }
 </script>
+
 <style scoped>
 .todo-list-card {
     width: 50%;
@@ -64,11 +74,13 @@ export default {
     margin: 0 auto;
     margin-top: -68px;
 }
-.todo-list-quote{
+
+.todo-list-quote {
     margin-top: 27px;
     font-weight: bold;
 }
-.welcome-msg{
+
+.welcome-msg {
     text-align: left;
 }
 </style>
