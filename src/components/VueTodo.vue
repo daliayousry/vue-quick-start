@@ -2,7 +2,7 @@
 <div>
     <the-header></the-header>
     <b-card class="todo-list-card">
-        <h3 class="welcome-msg">Hello {{ name | prepend('Dr.')}}</h3><br>
+        <h3 class="welcome-msg">{{$t('message')}} {{ name | prepend('Dr.')}}</h3><br>
         <todo-list :todos="todos" @setFavTask="setFavTask">
             <p v-if="quotes" class="todo-list-quote" slot="quote">🤗 {{quotes[Math.floor(Math.random() * 1000) + 1].text}}</p>
         </todo-list>
