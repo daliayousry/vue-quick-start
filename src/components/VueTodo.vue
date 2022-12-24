@@ -3,9 +3,10 @@
     <the-header></the-header>
     <b-card class="todo-list-card">
         <h3 class="welcome-msg">{{$t('message')}} {{ name | prepend('Dr.')}}</h3><br>
-        <todo-list :todos="todos" @setFavTask="setFavTask">
+        <todo-list :todos="$store.state.todos" @setFavTask="setFavTask">
             <p v-if="quotes" class="todo-list-quote" slot="quote">🤗 {{quotes[Math.floor(Math.random() * 1000) + 1].text}}</p>
         </todo-list>
+      <router-link to="/FavTodos">Go to FavTodos</router-link> 
     </b-card>
 </div>
 </template>
@@ -43,8 +44,9 @@ export default {
     },
     methods: {
         setFavTask(id) {
-            this.todos[id].isFav = true;
-            console.log("todo", this.todos[id])
+            console.log("this.$store.state.todos",this.$store.state.todos,id)
+           this.$store.state.todos[id].isFav = true;
+            this.$store.commit("favTodos", this.$store.state.todos[id-1]);
         }
     }
 }

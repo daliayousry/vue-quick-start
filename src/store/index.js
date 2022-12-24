@@ -36,7 +36,7 @@ export default new Vuex.Store({
   mutations: {
     favTodos: function (state, favTodo) {
       state.favTodos.push(favTodo);
-      console.log(state.favTodo);
+      console.log(state.favTodos);
     },
   },
 })

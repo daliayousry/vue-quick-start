@@ -1,10 +1,11 @@
 <template>
 <div>
 <b-list-group>
-    <b-list-group-item class="list-group" v-for="todo in todos" :key="todo.id" @click="selectTodo(todo.id)" >
+    <b-list-group-item class="list-group" v-for="todo in todos" :key="todo.id"  >
         {{todo.task}}
-        <div class="todo-list-action">
-            <i class="fa-regular fa-heart todo-action-icon fav-icon" v-on:click="setFavTask(todo.id)"></i>
+        <div class="todo-list-action" >
+            <i class="fa-regular fa-heart todo-action-icon fav-icon" v-if="!todo.isFav" v-on:click="setFavTask(todo.id)"></i>
+           <i class="fa-regular fa-eye todo-action-icon delete-icon" @click="selectTodo(todo.id)"></i>
             <i class="fa-regular fa-trash-can todo-action-icon delete-icon"></i>
         </div>
     </b-list-group-item>
