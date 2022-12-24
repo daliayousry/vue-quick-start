@@ -28,7 +28,7 @@ export default {
             console.log("id",id)
             this.$router.push({
                 name:'selectedTodo',
-               params:{ id:id}
+                params:{ id:id}
             })
         }
     }
