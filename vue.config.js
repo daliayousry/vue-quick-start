@@ -4,11 +4,11 @@ module.exports = defineConfig({
 
   pluginOptions: {
     i18n: {
-      locale: 'ar',
-      fallbackLocale: 'ar',
-      localeDir: locales,
-      enableInSFC: undefined,
-      enableBridge: undefined
+      locale: 'en',
+      fallbackLocale: 'en',
+      localeDir: 'langs',
+      enableInSFC: false,
+      enableBridge: false
     }
   }
 })
