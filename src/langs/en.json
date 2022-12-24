@@ -1,4 +1,5 @@
 {
   "message": "Welcome",
-  "favTodos": "Fav Todos"
+  "favTodos": "Fav Todos",
+  "selectedTodo":"Selected Todo"
 }

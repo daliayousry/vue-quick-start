@@ -1,7 +1,7 @@
 <template>
 <div>
 <b-list-group>
-    <b-list-group-item class="list-group" v-for="todo in todos" :key="todo.id">
+    <b-list-group-item class="list-group" v-for="todo in todos" :key="todo.id" @click="selectTodo(todo.id)" >
         {{todo.task}}
         <div class="todo-list-action">
             <i class="fa-regular fa-heart todo-action-icon fav-icon" v-on:click="setFavTask(todo.id)"></i>
@@ -24,6 +24,13 @@ export default {
         setFavTask(id){
          this.$emit("setFavTask",id)
         },
+        selectTodo(id){
+            console.log("id",id)
+            this.$router.push({
+                name:'selectedTodo',
+               params:{ id:id}
+            })
+        }
     }
 }
 </script>
@@ -31,6 +38,7 @@ export default {
 <style scoped>
 .list-group {
     text-align: left;
+    cursor: pointer;
 }
 
 .todo-list-action {
