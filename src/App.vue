@@ -1,25 +1,10 @@
 <template>
   <div id="app">
-   <vue-todo-list></vue-todo-list>
+    <router-view/>
   </div>
 </template>
 
-<script>
-import VueTodoList from "./components/VueTodo.vue"
-
-export default {
-  name: 'App',
-  components: {
-    VueTodoList
-  }
-}
-</script>
-
-<style>
-html{
-  background-color:#F5F6F7;
-
-}
+<style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -28,4 +13,16 @@ html{
   color: #2c3e50;
 }
 
+nav {
+  padding: 30px;
+
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
+}
 </style>
